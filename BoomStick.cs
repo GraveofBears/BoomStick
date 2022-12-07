@@ -9,31 +9,25 @@ namespace BoomStick
     public class BoomStick : BaseUnityPlugin
     {
         private const string ModName = "BoomStick";
-        private const string ModVersion = "0.0.5";
+        private const string ModVersion = "0.0.8";
         private const string ModGUID = "org.bepinex.plugins.boomstick";
 
         public void Awake()
         {
-            Item BoomStick = new Item("boomstick", "BoomStick", "Booms");
-            BoomStick.Crafting.Add(CraftingTable.Forge, 3);
-            BoomStick.RequiredItems.Add("BlackMetal", 14);
-            BoomStick.RequiredItems.Add("RoundLog", 4);
-            BoomStick.RequiredItems.Add("Wood", 8);
-            BoomStick.RequiredUpgradeItems.Add("BlackMetal", 12);
-            BoomStick.RequiredUpgradeItems.Add("RoundLog", 2);
-            BoomStick.RequiredUpgradeItems.Add("Wood", 2);
-            BoomStick.Configurable = Configurability.Full;
-            BoomStick.CraftAmount = 1;
-
-            Item BoomShot = new Item("boomstick", "BoomShot", "Booms");
-            BoomShot.Crafting.Add(CraftingTable.Forge, 3);
-            BoomShot.RequiredItems.Add("Tin", 4);
-            BoomShot.RequiredItems.Add("Tar", 2);
-            BoomShot.RequiredItems.Add("Ooze", 2);
-            BoomShot.Configurable = Configurability.Full;
-            BoomShot.CraftAmount = 25;
-
-            GameObject boomboom_projectile = PrefabManager.RegisterPrefab("boomstick", "boomboom_projectile");
+            Item Odins_BoomStick = new Item("boomstick", "Odins_BoomStick", "Booms");
+            Odins_BoomStick.Crafting.Add(CraftingTable.BlackForge, 1);
+            Odins_BoomStick.Name.English("Odin's Boomstick");
+            Odins_BoomStick.Description.English("This is my Boomstick!");
+            Odins_BoomStick.RequiredItems.Add("BlackMarble", 4);
+            Odins_BoomStick.RequiredItems.Add("YggdrasilWood", 4);
+            Odins_BoomStick.RequiredUpgradeItems.Add("BlackMarble", 2);
+            Odins_BoomStick.RequiredUpgradeItems.Add("YggdrasilWood", 2);
+            Odins_BoomStick.Configurable = Configurability.Full;
+            Odins_BoomStick.CraftAmount = 1;
+            GameObject Odins_Boomshot_Pro = PrefabManager.RegisterPrefab("boomstick", "Odins_Boomshot_Pro");
+            GameObject fx_boomshot_hit = PrefabManager.RegisterPrefab("boomstick", "fx_boomshot_hit");
+            GameObject vfx_boomshot_fire = PrefabManager.RegisterPrefab("boomstick", "vfx_boomshot_fire");
+            GameObject sfx_boomshot_fire = PrefabManager.RegisterPrefab("boomstick", "sfx_boomshot_fire");
 
         }
     }
